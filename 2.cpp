@@ -1,36 +1,23 @@
-#include <iostream>
-/*
-OOPS -> classes and objects
-c++ -> C with classes 
-classes-> extension of structures(int C)
-structures and limitations
-	- members are public
-	- No methods
-classes ->Structures +more
-Classes ->can have methods and properties
-Classes ->can make few members as private and few are public.
-Structure in c++ are typdefed
-you can declare objects along with class declaraction 
-class Employee
-{
-	
-}anchal, pakhi;
-anchal .sal=0;cannot access private.
 
-**Nesting member functions 
+/*Nesting of member function*/
+
+#include <iostream>
+
+/*Nesting member functions 
 */
 #include <cstring>
 using namespace std;
 class binary
 {
 	string s;
+	void chk_bin(void);
 
 public:
 	
 
 	void read(void);
-	void chk_bin(void);
 	void ones_compliment(void);
+	void display(void);
 	
 };
 
@@ -55,17 +42,21 @@ void binary::chk_bin(void)
 void binary:: ones_compliment(void)
 {
 	chk_bin();
-	for(int i=0;i<s.length();i++)
+	for(int j=0;j<s.length();j++)
 	{
-		if (s.at(i)=='0')
+		if (s.at(j)=='0')
 		{
-			s.at(i)=='1';
+			s.at(j)='1';
 		}
-		else if(s.at(i)==1)
+		else if(s.at(j)=='1')
 		{
-			s.at(i)=='0';
+			s.at(j)='0';
 		}
 	}
+}
+
+void binary :: display(void)
+{
 	for(int i=0;i<s.length();i++)
 	{
 		cout<<s.at(i);
@@ -77,8 +68,9 @@ int main(int argc, char const *argv[])
 	binary b;
 	b.read();
 	//b.chk_bin();
+	b.display();
 	b.ones_compliment();
-
+	b.display();
 
 	return 0;
 }
